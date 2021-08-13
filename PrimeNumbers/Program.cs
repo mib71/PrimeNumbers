@@ -6,7 +6,7 @@ namespace PrimeNumbers
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter number you want to check: ");
+            Console.Write("Enter number you want to check: ");
             int number = Convert.ToInt32(Console.ReadLine());
             int dividers = 0;
 
