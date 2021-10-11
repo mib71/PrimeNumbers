@@ -15,6 +15,10 @@ namespace PrimeNumbers
                 if (number % i == 0)
                 {
                     dividers++;
+                    if (dividers > 2)
+                    {
+                        break;
+                    }
                 }
             }
 
