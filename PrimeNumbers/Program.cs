@@ -8,30 +8,29 @@ namespace PrimeNumbers
         {
             Console.Write("Enter number you want to check: ");
             int number = Convert.ToInt32(Console.ReadLine());
-            int dividers = 0;
 
-            for (int i = 1; i <= number; i++)
+            Console.WriteLine(IsPrime(number) ? "The number is a Prime Number" : "The number is not a Prime Number");            
+        }
+
+        private static bool IsPrime(int n)
+        {
+            if (n == 2) return true;
+
+            if (n >= 3)
             {
-                if (number % i == 0)
+                if (n % 2 == 0 || n == 9) return false;
+                var limit = (int)Math.Floor(Math.Sqrt(n));
+
+                for (int i = 2; i < limit; i++)
                 {
-                    dividers++;
-                    if (dividers > 2)
+                    if (n % i == 0)
                     {
-                        break;
+                        return false;
                     }
                 }
+                return true;
             }
-
-            if (dividers == 2)
-            {
-                Console.WriteLine("The number is a Prime Number");
-            }
-            else
-            {
-                Console.WriteLine("The number is not a Prime Number");
-            }
-
-            Console.ReadKey();
+            return false;
         }
     }
 }
